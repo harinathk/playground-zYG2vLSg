@@ -32,6 +32,7 @@ boolean noneMatch
     = IntStream.of(-6, -7, -5, -2, -8, -1, -9).noneMatch(value -> value > 0);
 System.out.println("noneMatch(value -> value > 0): " + noneMatch);
 
+//returns 5
 OptionalInt optValue = IntStream.of(-6, -7, 5, -2, -8, 1, 9)
                                           .filter(value -> value > 0)
                                           .findFirst();
