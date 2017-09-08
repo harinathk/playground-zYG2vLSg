@@ -11,6 +11,7 @@ Methods starting with "find" returns return Optional<T> (we discuss Optional<T> 
 ```java runnable
 // { autofold
 import java.util.stream.IntStream;
+import java.util.OptionalInt;
 public class Main {
 
 public static void main(String[] args) {
@@ -18,23 +19,23 @@ public static void main(String[] args) {
 
 //returns false
 boolean anyMatch
-    = IntStream.of(-6, -7, -5, -2, -8, -1, -9).anyMatch(temp -> temp > 0);
-System.out.println("anyMatch(temp -> temp > 0): " + anyMatch);
+    = IntStream.of(-6, -7, -5, -2, -8, -1, -9).anyMatch(value -> value > 0);
+System.out.println("anyMatch(value -> value > 0): " + anyMatch);
 
 //returns false
 boolean allMatch
-    = IntStream.of(-6, -7, -5, -2, -8, -1, -9).allMatch(temp -> temp > 0);
-System.out.println("allMatch(temp -> temp > 0): " + allMatch);
+    = IntStream.of(-6, -7, -5, -2, -8, -1, -9).allMatch(value -> value > 0);
+System.out.println("allMatch(value -> value > 0): " + allMatch);
 
 //returns true
 boolean noneMatch
-    = IntStream.of(-6, -7, -5, -2, -8, -1, -9).noneMatch(temp -> temp > 0);
-System.out.println("noneMatch(temp -> temp > 0): " + noneMatch);
+    = IntStream.of(-6, -7, -5, -2, -8, -1, -9).noneMatch(value -> value > 0);
+System.out.println("noneMatch(value -> value > 0): " + noneMatch);
 
-OptionalInt temperature = IntStream.of(-6, -7, 5, -2, -8, 1, 9)
-                                          .filter(temp -> temp > 0)
+OptionalInt optValue = IntStream.of(-6, -7, 5, -2, -8, 1, 9)
+                                          .filter(value -> value > 0)
                                           .findFirst();
-System.out.println("First matching value > 0 is " + temperature.getAsInt());
+System.out.println("First matching value > 0 is " + optValue.getAsInt());
 
 //{ autofold
 }
