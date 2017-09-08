@@ -10,6 +10,7 @@ Methods starting with "find" returns return Optional<T> (we discuss Optional<T> 
 
 ```java runnable
 // { autofold
+import java.util.stream.IntStream;
 public class Main {
 
 public static void main(String[] args) {
